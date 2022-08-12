@@ -1,0 +1,18 @@
+<section class="extrato">
+   <div class="titulo-extrato">
+      <h3>Extrato</h3>
+      <h4>{{nomeMes}} {{ano}}</h4>
+   </div>
+   <div class="titulo-colunas">
+      <span class="data">Data</span>
+      <span class="descricao">Descrição do lançamento</span>
+      <span class="valor">Valor</span>
+   </div>
+   <section class="lista-de-compras">
+      <app-compra *ngFor="let compra of compras" (notify)="somaTotal(compra.valor)" [compraProp]="compra"></app-compra>
+   </section>
+
+   <section class="valor-total">
+      <p>Valor total: R$ {{total.toLocaleString('pt-br', {minimumFractionDigits: 2})}}</p>
+   </section>
+</section>

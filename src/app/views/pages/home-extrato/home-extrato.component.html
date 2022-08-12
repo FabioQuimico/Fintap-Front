@@ -1,0 +1,39 @@
+<h1 class="extrato-titlebar">
+   <h2>FINTAP</h2>
+   <h3>{{nomeCliente}}</h3>
+</h1>
+<div class="coluna-extrato">
+
+   <div class="container-extrato">
+      <p class="message-bar">Selecione o ano e o mês para o extrato correspondente</p>
+
+      <div class="anos">
+         <ul>
+            <li><a href="#" (click)="setAno(2020)">2020</a></li>
+            <li><a href="#" (click)="setAno(2021)">2021</a></li>
+            <li><a href="#" (click)="setAno(2022)">2022</a></li>
+         </ul>
+      </div>
+      <div class="meses">
+         <ul>
+            <li><a href="#" (click)="setMes(1)">Jan</a></li>
+            <li><a href="#" (click)="setMes(2)">Fev</a></li>
+            <li><a href="#" (click)="setMes(3)">Mar</a></li>
+            <li><a href="#" (click)="setMes(4)">Abr</a></li>
+            <li><a href="#" (click)="setMes(5)">Mai</a></li>
+            <li><a href="#" (click)="setMes(6)">Jun</a></li>
+            <li><a href="#" (click)="setMes(7)">Jul</a></li>
+            <li><a href="#" (click)="setMes(8)">Ago</a></li>
+            <li><a href="#" (click)="setMes(9)">Set</a></li>
+            <li><a href="#" (click)="setMes(10)">Out</a></li>
+            <li><a href="#" (click)="setMes(11)">Nov</a></li>
+            <li><a href="#" (click)="setMes(12)">Dez</a></li>
+         </ul>
+      </div>
+
+      <div class="caixa-extrato-data">
+         <app-extrato [mes]="mes" [ano]="ano"></app-extrato>
+      </div>
+
+   </div>
+</div>

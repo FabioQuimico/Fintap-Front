@@ -1,0 +1,8 @@
+<article class="compra">
+   <div class="data">{{compraProp.data}}</div>
+   
+   <!--- Quando usar LocalDate alterar a data para a formatada abaixo -->
+   <!-- <div class="data">{{compraProp.data | date:"dd/MM/yyy hh:mm"}}</div> -->
+   <div class="descricao">{{compraProp.descricao}}</div>
+   <div class="valor">R$ {{compraProp.valor.toLocaleString('pt-br', {minimumFractionDigits: 2})}}</div>
+</article>
