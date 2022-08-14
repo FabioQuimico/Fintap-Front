@@ -1,31 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { compra } from './@types/compra';
+import { compraCompleta } from './@types/compraCompleta';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CompraService {
 
-  private compras = [
-    {
-      data: '05/08/2022',
-      descricao: "Vendedor de Mariola",
-      valor: 100.00,
-    },
-    {
-      data: '06/08/2022',
-      descricao: "Vendedor de Goiabada Cascão",
-      valor: 200.00,
-    },
-    {
-      data: '07/08/2022',
-      descricao: "Vendedor de Frutos do Mar",
-      valor: 300.00,
-    }
-  ]
+  private apiUrl: string;
+  private compras = [] as compra[];
 
-  getCompras() {
-    return this.compras;
+  constructor(private http: HttpClient) { 
+    this.apiUrl = 'https://cartao-fiap.herokuapp.com/';
   }
 
-  constructor() { }
+  getCompras(mes: number, ano: number) {
+    let comprasCompletas = [] as compraCompleta[];
+    return this.http.get<compraCompleta[]>(`${this.apiUrl}/extrato/${mes}/${ano}`);
+  }
+
 }
