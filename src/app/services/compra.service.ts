@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { compra } from './@types/compra';
 import { compraCompleta } from './@types/compraCompleta';
 
@@ -19,5 +20,4 @@ export class CompraService {
     let comprasCompletas = [] as compraCompleta[];
     return this.http.get<compraCompleta[]>(`${this.apiUrl}/extrato/${mes}/${ano}`);
   }
-
 }

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeExtratoComponent implements OnInit {
 
   // nomeCliente deve vir da tela de Login
-  nomeCliente = "[Nome do Cliente]";
+  nomeCliente = "Página de extrato do cliente";
   // mes e ano devem vir da data atual
   mes: number = new Date().getMonth() + 1;
   ano: number = new Date().getFullYear();

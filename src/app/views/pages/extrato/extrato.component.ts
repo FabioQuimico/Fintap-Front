@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { compra } from 'src/app/services/@types/compra';
 import { compraCompleta } from 'src/app/services/@types/compraCompleta';
 import { CompraService } from 'src/app/services/compra.service';
+import { Subject } from 'rxjs';
 
 enum MESES {
   Janeiro = 1,
@@ -33,6 +34,9 @@ export class ExtratoComponent implements OnInit {
   @Input()
   ano = 0;
   total = 0;
+  
+  private clienteSource = new Subject();
+  ClienteProvider = this.clienteSource.asObservable();
 
   constructor(private compraService: CompraService) { }
 
@@ -51,6 +55,7 @@ export class ExtratoComponent implements OnInit {
     compraNova.valor = compraComp.valorCompra;
     compraNova.descricao = compraComp.situacaoCompra;
     this.compras.push(compraNova);
+    this.notifyCliente(compraComp.nomeCliente);
   }
 
   ngOnChanges(): void {
@@ -67,5 +72,11 @@ export class ExtratoComponent implements OnInit {
   somaTotal(valor: number): void {
     this.total += valor;
   }
+
+  notifyCliente(nomeCliente: String) {
+    this.clienteSource.next(nomeCliente);
+  }
+
 }
+
 
