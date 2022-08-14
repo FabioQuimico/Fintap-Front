@@ -3,6 +3,20 @@ import { compra } from 'src/app/services/@types/compra';
 import { compraCompleta } from 'src/app/services/@types/compraCompleta';
 import { CompraService } from 'src/app/services/compra.service';
 
+enum MESES {
+  Janeiro = 1,
+  Fevereiro = 2,
+  Março = 3,
+  Abril = 4,
+  Maio = 5,
+  Junho = 6,
+  Julho = 7,
+  Agosto = 8,
+  Setembro = 9,
+  Outubro = 10,
+  Novembro = 11,
+  Dezembro = 12
+}
 
 @Component({
   selector: 'app-extrato',
